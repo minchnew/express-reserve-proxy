@@ -1,0 +1,37 @@
+{
+  "name": "express-request-proxy",
+  "version": "0.0.1",
+  "description": "express proxy",
+  "main": "index.js",
+  "dependencies": {
+    "concat-stream": "1.4.8",
+    "path-to-regexp": "0.0.2",
+    "request": "2.55.0"
+  },
+  "devDependencies": {
+    "express": "4.12.3",
+    "istanbul": "0.3.13",
+    "supertest": "0.15.0",
+    "tape": "4.0.0"
+  },
+  "scripts": {
+    "test": "node --harmony ./node_modules/.bin/tape test/*.js",
+    "cover": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/tape -- test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhcmrlchtdj/express-request-proxy.git"
+  },
+  "keywords": [
+    "express",
+    "http",
+    "proxy",
+    "request"
+  ],
+  "author": "niris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhcmrlchtdj/express-request-proxy/issues"
+  },
+  "homepage": "https://github.com/dhcmrlchtdj/express-request-proxy"
+}
