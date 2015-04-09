@@ -27,7 +27,7 @@ var updateConfig = function(configs) {
 
 
 // 获取规则
-var getRequestConfig = function(req) {
+var getRequestConfig = function(configs, req) {
     var path = req.path;
     for (var i = 0, ii = configs.length; i < ii; i++) {
         var c = configs[i];
@@ -71,7 +71,7 @@ module.exports = function(configs) {
     updateConfig(configs);
 
     var middleware = function(req, res, next) {
-        var requestConfig = getRequestConfig(req);
+        var requestConfig = getRequestConfig(configs, req);
         if (requestConfig) {
             processRequest(requestConfig, req, res);
         } else {
