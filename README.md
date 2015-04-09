@@ -1,4 +1,4 @@
-# express request proxy
+# express reserve proxy
 
 [![MIT license][license-image]][license-url]
 [![build status][travis-image]][travis-url]
@@ -13,7 +13,7 @@
 ## install
 
 ```
-$ npm install --save express-request-proxy
+$ npm install --save express-reserve-proxy
 ```
 
 
@@ -53,15 +53,15 @@ MIT
 
 
 
-[license-image]: https://img.shields.io/npm/l/express-request-proxy.svg?style=flat-square
-[license-url]: https://github.com/dhcmrlchtdj/express-request-proxy/blob/master/LICENSE
-[travis-image]: https://img.shields.io/travis/dhcmrlchtdj/express-request-proxy.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dhcmrlchtdj/express-request-proxy
-[coveralls-image]: https://img.shields.io/coveralls/dhcmrlchtdj/express-request-proxy.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/dhcmrlchtdj/express-request-proxy
-[npm-image]: https://img.shields.io/npm/v/express-request-proxy.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/express-request-proxy
-[download-image]: https://img.shields.io/npm/dm/express-request-proxy.svg?style=flat-square
-[download-url]: https://www.npmjs.com/package/express-request-proxy
-[dependency-image]: https://img.shields.io/david/dhcmrlchtdj/express-request-proxy.svg?style=flat-square
-[dependency-url]: https://david-dm.org/dhcmrlchtdj/express-request-proxy
+[license-image]: https://img.shields.io/npm/l/express-reserve-proxy.svg?style=flat-square
+[license-url]: https://github.com/dhcmrlchtdj/express-reserve-proxy/blob/master/LICENSE
+[travis-image]: https://img.shields.io/travis/dhcmrlchtdj/express-reserve-proxy.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dhcmrlchtdj/express-reserve-proxy
+[coveralls-image]: https://img.shields.io/coveralls/dhcmrlchtdj/express-reserve-proxy.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/dhcmrlchtdj/express-reserve-proxy
+[npm-image]: https://img.shields.io/npm/v/express-reserve-proxy.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/express-reserve-proxy
+[download-image]: https://img.shields.io/npm/dm/express-reserve-proxy.svg?style=flat-square
+[download-url]: https://www.npmjs.com/package/express-reserve-proxy
+[dependency-image]: https://img.shields.io/david/dhcmrlchtdj/express-reserve-proxy.svg?style=flat-square
+[dependency-url]: https://david-dm.org/dhcmrlchtdj/express-reserve-proxy
