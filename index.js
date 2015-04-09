@@ -1,6 +1,5 @@
 "use strict";
 
-
 var querystring = require('querystring');
 var url = require('url');
 
@@ -26,6 +25,7 @@ var updateConfig = function(configs) {
     }
 };
 
+
 // 获取规则
 var getRequestConfig = function(req) {
     var path = req.path;
@@ -33,7 +33,6 @@ var getRequestConfig = function(req) {
         var c = configs[i];
         var m = c.re.exec(path);
         if (m) {
-            console.log('===\n[match]\n', c, '\n===');
             var to = c.to;
             if (typeof to === 'function') to = c.to(req);
             if (typeof to === 'string') {
@@ -46,6 +45,7 @@ var getRequestConfig = function(req) {
         }
     }
 };
+
 
 // 应用规则
 var processRequest = function(config, req, res) {
@@ -67,14 +67,12 @@ var processRequest = function(config, req, res) {
 };
 
 
-module.exports = function() {
+module.exports = function(configs) {
     updateConfig(configs);
-    console.log('===\n[config]\n', configs, '\n===');
 
     var middleware = function(req, res, next) {
         var requestConfig = getRequestConfig(req);
         if (requestConfig) {
-            console.log('===\n[config]\n', requestConfig, '\n===');
             processRequest(requestConfig, req, res);
         } else {
             next();
