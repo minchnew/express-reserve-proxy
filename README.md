@@ -18,6 +18,10 @@ $ npm install --save express-reserve-proxy
 
 
 
+## caution
+
+`express-reserve-proxy` must be mounted before body-parsing middleware such as body-parser and multer.
+
 
 ## example
 
