@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var querystring = require('querystring');
 var url = require('url');
@@ -48,12 +48,15 @@ var getRequestConfig = function(configs, req) {
 
 
 // 应用规则
+var methodWithoutBody = ['GET', 'HEAD'];
 var processRequest = function(config, req, res) {
     if (typeof config === 'object') { // 配置中自定义 config，直接请求
         request(config).pipe(res);
-    } else if (req.method.toUpperCase() === 'GET') { // 普通 GET 请求，转发之
+
+    } else if (methodWithoutBody.indexOf(req.method.toUpperCase()) >= 0) { // without body
         req.pipe(request(config)).pipe(res);
-    } else { // 所有非 GET 请求，手动构造
+
+    } else { // with body
         req.headers.host = url.parse(config).host; // 更新 host
         req.pipe(concat(function(data) {
             request({
