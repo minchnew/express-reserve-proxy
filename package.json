@@ -1,6 +1,6 @@
 {
   "name": "express-reserve-proxy",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "express proxy",
   "main": "index.js",
   "dependencies": {
