@@ -54,7 +54,7 @@ var processRequest = function(config, req, res) {
         request(config).pipe(res);
 
     } else if (methodWithoutBody.indexOf(req.method.toUpperCase()) >= 0) { // without body
-        req.pipe(request(config)).pipe(res);
+        req.pipe(request(config + '?' + qs.stringify(req.query))).pipe(res);
 
     } else { // with body
         req.headers.host = url.parse(config).host; // 更新 host
