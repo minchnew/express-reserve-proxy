@@ -7,7 +7,9 @@ var concat = require('concat-stream');
 var pathToRegexp = require('path-to-regexp');
 var request = require('request');
 
-
+var r = request.defaults({
+    followRedirect: false
+});
 
 
 // 更新规则
@@ -51,17 +53,17 @@ var getRequestConfig = function(configs, req) {
 var methodWithoutBody = ['GET', 'HEAD'];
 var processRequest = function(config, req, res) {
     if (typeof config === 'object') { // 配置中自定义 config，直接请求
-        request(config).pipe(res);
+        r(config).pipe(res);
 
     } else if (methodWithoutBody.indexOf(req.method.toUpperCase()) >= 0) { // without body
         req
-            .pipe(request(config + '?' + querystring.stringify(req.query)))
+            .pipe(r(config + '?' + querystring.stringify(req.query)))
             .pipe(res);
 
     } else { // with body
         req.headers.host = url.parse(config).host; // 更新 host
         req.pipe(concat(function(data) {
-            request({
+            r({
                 method: req.method,
                 url: config,
                 headers: req.headers,
