@@ -56,8 +56,9 @@ var processRequest = function(config, req, res) {
         r(config).pipe(res);
 
     } else if (methodWithoutBody.indexOf(req.method.toUpperCase()) >= 0) { // without body
+        var query = querystring.stringify(req.query);
         req
-            .pipe(r(config + '?' + querystring.stringify(req.query)))
+            .pipe(r(config + (query && '?' + query))
             .pipe(res);
 
     } else { // with body
